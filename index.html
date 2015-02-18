@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html ng-app="resume">
+<head profile="http://www.w3.org/2005/10/profile">
+
+	<meta charset="utf-8">
+
+	<meta name="format-detection" content="telephone=no">
+
+	<!-- VIEWPORT -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- FAV -->
+	<link rel="icon" type="image/png" href="/graphics/site/fav.png" />
+
+	<!-- FONTS -->
+	<link href="http://fonts.googleapis.com/css?family=Abel" rel="stylesheet" type="text/css" />
+	<link href='http://fonts.googleapis.com/css?family=Abel|Pacifico|Source+Sans+Pro:600' rel='stylesheet' type='text/css'>
+
+	<!-- STYLE -->
+	<link rel="stylesheet" href="index.php/default/style.css" type="text/css" />
+
+	<!-- ANGULAR -->
+	<script type="text/javascript" src="/scripts/angular.min.js"></script>
+	<script type="text/javascript" src="/index.php/default/app.js"></script>
+
+	<!-- JQUERY -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+	<title>David Leonard</title>
+
+</head>
+
+<body ng-controller="siteCtrl">
+
+	<!-- FLOAT MENU -->
+	<div class="menu-container">
+		<div class="menu-spacer" align="center">
+			<div>
+				<div class="menu-circle" ng-repeat="menuItem in menuItems" post-menu-directive>
+					<div class="img-menu-bg-{{menuItem.id}}"></div>
+					<div class="img-menu-{{menuItem.id}}"
+					 	 ng-mouseover="popup='popup-show'; getMargin(menuItem.id);"
+						 ng-mouseleave="popup='popup-hide'"
+						 ng-click="go(menuItem.location)"></div>
+					<div id="popup-{{menuItem.id}}"
+						 class="popup"
+						 ng-class="popup"
+						 style="margin-left: -{{popupMargin}}px;">{{menuItem.popup}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="canvas" align="center">
+
+		<div class="content">
+
+			<!-- COVER -->
+			<div class="bg-white">
+				<div id="cover" class="img-cover" align="center">
+					<div class="container">
+						<div class="grid grid-pad">
+
+							<div class="col-1-1">
+								<div class="img-title-cover"></div>
+								<div class="img-title-cover-sub"></div>
+							</div>
+
+							<div class="col-1-1">
+								<div class="social">
+									<div class="col-1-3" align="center">
+										<div class="img-social-pin"></div>
+										Bay Area
+									</div>
+									<div id="link-envelope" class="col-1-3" align="center">
+										<div class="img-social-envelope"></div>
+										dleonard77@me.com
+									</div>
+									<div class="col-1-3" align="center">
+										<div class="img-social-cell"></div>
+										818-370-8773
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="footnote">
+					<div class="footnote-item-pdf">
+						<div>Save as PDF</div>
+						<div class="img-icon-adobe"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="bg-white">
+
+				<div class="container">
+					<div class="grid grid-pad">
+
+						<div class="col-1-1">
+
+							<div class="img-title-web"></div>
+
+							<div class="txt-stretch-intro">
+								I strive to create visually pleasing user interfaces that are intuitive and functional. My passion is creating and problem solving and I take pride in applying a high degree of focus to detail <img width="12" height="12" src="/graphics/svg/detail.svg"></img> and design consistency throught a project.
+							</div>
+
+							<div id="responsive">
+								<div ng-repeat="badge in badges"
+									 class="zoom {{badge.style}}"
+									 post-badges-directive>
+									<div class="img-zoom" align="center"></div>
+									<div>{{badge.notes}}</div>
+								</div>
+							</div>
+
+							<badges></badges>
+
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+
+			<!-- EXPERIENCE -->
+			<div id="experience" align="center">
+
+				<div class="container">
+
+					<div class="col-1-1">
+						<div class="chart-spacer">
+							<div class="chart-pie-container" align="center">
+								<div class="img-chart-pie-a rotate90"></div>
+								<div class="img-chart-pie-b rotate90"></div>
+								<div class="img-chart-pie-c rotate90"></div>
+								<div class="img-chart-pie-center"></div>
+							</div>
+							<div class="chart-overlay-container" align="center">
+								<div class="img-chart-overlay"></div>
+								<div class="chart-txt-spacer">
+
+									<div class="chart-txt chart-link-design">
+										UX / UI Design<br>
+										Photoshop<br>
+										Illustrator<br>
+										Fireworks
+									</div>
+									<div class="chart-txt chart-link-code">
+										Javascript<br>
+										jQuery<br>
+										Angular.js<br>
+										Expression Engine<br>
+										RESTful Api
+									</div>
+									<div class="chart-txt chart-link-html">
+										HTML5 / CSS3<br>
+										Responsive Design
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-1-1">
+
+						<div id="timeline">
+
+							<div class="timeline-col-work timeline-spacer-workRight">
+								<div class="timeline-box-work">
+									<br>
+									small client web design
+								</div>
+								<div id="link-hlp" class="timeline-box-work timeline-link">
+									Herman Leonard Photography<br>
+									UI design and development
+								</div>
+								<div id="link-gallto" class="timeline-box-work timeline-link">
+									Gallto<br>
+									UI design and development
+								</div>
+								<div id="link-couchster" class="timeline-box-work timeline-link">
+									Couchster.com<br>
+									jquery/angular.js development
+								</div>
+							</div>
+
+							<div class="timeline-col-dates timeline-spacer-dates">
+								<div class="timeline-box-date">2002</div>
+								<div class="timeline-box-date">2009</div>
+								<div class="timeline-box-date">2012</div>
+								<div class="timeline-box-date">2015</div>
+							</div>
+
+							<div class="timeline-col-work timeline-spacer-workLeft">
+								<div>
+									Ohio University<br>
+									Interactive Media
+								</div>
+								<div>
+									Lakeside Photoworks<br>
+									Photo Retouching<br>
+									Marketing and Design
+								</div>
+								<div>
+									Samy’s Camera<br>
+									Apple Department<br>
+									Photo Retouching
+								</div>
+								<div id="link-lakeside" class="timeline-link">
+									Lakeside Photoworks<br>
+									Web Development<br>
+									Marketing and Design
+								</div>
+								<div id="link-giving" class="timeline-link">
+									GivingImages.com<br>
+									LakesidePhotoworks.com<br>
+									HaroldsPhoto.com<br>
+									FullertonPhoto.com
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<!-- ME -->
+			<div id="me" align="center">
+
+				<div class="container">
+					<div class="grid grid-pad">
+
+						<div class="col-1-1">
+							<div class="img-detail"></img>
+						</div>
+
+						<div class="col-1-1">
+							<div class="img-fun"></div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+</body>
+</html>
