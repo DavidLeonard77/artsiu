@@ -53,32 +53,6 @@
 
 			];
 
-			// Links
-				$('#menu-link-envelope').click(function(){
-					document.location = 'mailto: dleonard77@me.com';
-				});
-				$('#link-envelope').click(function(){
-					document.location = 'mailto: dleonard77@me.com';
-				});
-				$('.footnote-item-pdf').click(function(){
-					document.location = 'graphics/site/David_Leonard_Resume.pdf';
-				});
-				$('#link-hlp').click(function(){
-					document.location = 'http://www.hermanleonard.com';
-				});
-				$('#link-gallto').click(function(){
-					document.location = 'http://64.207.154.226';
-				});
-				$('#link-couchster').click(function(){
-					document.location = 'http://www.couchster.com';
-				});
-				$('#link-giving').click(function(){
-					document.location = 'http://www.givingimages.com';
-				});
-				$('#link-lakeside').click(function(){
-					document.location = 'http://www.lakesidecamera.com';
-				});
-
 			// Chart mouseovers
 				$('.chart-link-design').mouseover(function(){
 					$('.img-chart-pie-b').css({ 'opacity' : '0.25' });
@@ -164,8 +138,8 @@
 					if (scroll < 600 || scroll > 1750) $('.chart-overlay-container').css({ 'opacity' : '0' });
 					else $('.chart-overlay-container').css({ 'opacity' : '1' });
 
-					if (scroll < 800) $('#timeline').css({ 'opacity' : '0' });
-					else $('#timeline').css({ 'opacity' : '1' });
+					if (scroll < 1200) $('timeline').css({ 'opacity' : '0' });
+					else $('timeline').css({ 'opacity' : '1' });
 
 					if (scroll > 1450) $('#me').css({ 'opacity' : '1' });
 					else $('#me').css({ 'opacity' : '0' });
@@ -175,11 +149,6 @@
 			$scope.go = function (href) {
 
 				if (href != '') document.location = href;
-			};
-
-			$scope.pageNav = function (pxHeight) {
-
-				$('html, body').animate({ scrollTop: pxHeight }, 1000);
 			};
 
 			$scope.getMargin = function (id) {
