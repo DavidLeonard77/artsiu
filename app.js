@@ -250,6 +250,42 @@
 				controllerAs: 'badgesCtrl'
 			}
 		})
+		.directive('timeline',function(){
+			return {
+				restrict: 'E',
+				templateUrl: 'index.php/default/timeline.html',
+				controller: function($scope){
+
+					$scope.timeline = [
+
+						{
+							title : 'Gallto',
+							dates : '2012-2013',
+							info : ['UI design and development'],
+							url : 'http://64.207.154.226'
+						},{
+							title : 'Lakeside Photoworks',
+							dates : '2012-2015',
+							info : ['UI design and development'],
+							url : 'http://www.lakesidephotoworks.com'
+						},{
+							title : 'HL Photography',
+							dates : '2009-2015',
+							info : ['UI design and development'],
+							url : 'http://www.hermanleonard.com'
+						},{
+							title : 'Couchster',
+							dates : '2014-2015',
+							info : ['jquery/angular.js development'],
+							url : 'http://www.couchster.com'
+						}
+
+					];
+
+				},
+				controllerAs: 'timelineCtrl'
+			}
+		})
 		.directive('postMenuDirective',function(){
 			return function(scope, element, attrs) {
 				if (scope.$last) setTimeout(function(){ scope.$emit('postMenuDirective', element, attrs) }, 1);

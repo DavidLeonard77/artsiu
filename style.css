@@ -175,6 +175,10 @@
 
 /*   COVER   */
 
+	#cover > div:first-child {
+		padding: 77px 30px 10px;
+	}
+
 	.img-cover {
 		background-image: url('/graphics/bmp/background.jpg');
 		width: 100%;
@@ -185,14 +189,15 @@
 	.img-title-cover {
 		background-image: url('/graphics/svg/title-cover.svg');
 		height: 54px;
-		margin: 50px 0 10px;
 	}
 	.img-title-cover-sub {
 		background-image: url('/graphics/svg/title-cover-sub.svg');
 		height: 22px;
+		margin-top: 10px;
 	}
 
 	.social {
+		margin-top: 23px;
 		max-width: 422px;
 		color: #fff;
 	}
@@ -395,85 +400,53 @@
 
 /*   TIMELINE   */
 
-	#timeline {
-		width: 343px;
-		margin: 40px 0 80px;
-	}
-	.timeline-col-work,
-	.timeline-col-work > div {
-		width: 217px;
-	}
-
-	.timeline-spacer-dates > div:nth-child(1) {
-		margin-top: 54px;
-	}
-	.timeline-spacer-dates > div:nth-child(2) {
-		margin-top: 60px;
-	}
-	.timeline-spacer-dates > div:nth-child(3) {
-		margin-top: 54px;
-	}
-	.timeline-spacer-dates > div:nth-child(4) {
-		margin-top: 138px;
-	}
-	.timeline-spacer-workRight > div:nth-child(1) {
-		height: 100px;
-		padding-top: 16px;
-	}
-	.timeline-spacer-workRight > div:nth-child(2) {
-		height: 100px;
-		padding-top: 16px;
-	}
-	.timeline-spacer-workRight > div:nth-child(3) {
-		height: 90px;
-		padding-top: 21px;
-	}
-
-	[class*='timeline-col-'] > div:last-child {
-		margin-bottom: 60px;
-	}
-	[class*='timeline-col'],
-	[class*='timeline-box'] {
-		float: left;
-		min-height: 30px;
-	}
-	.timeline-spacer-workLeft,
-	.timeline-spacer-workRight {
-		float: none;
-	}
-	[class*='timeline-box'] {
-		margin: 1px;
-	}
-	.timeline-col-date > div {
-		width: 60px;
-		border-color: #58585a;
-		color: #58585a;
-		font-size: 22px;
-		font-family: 'Source Sans Pro', sans-serif;
-	}
-
-	.timeline-col-work > div:first-line {
-		font-size: 18px;
-	}
-	.timeline-col-work > div {
+	timeline {
+		display: table;
+		margin: 120px 0 0;
 		color: #999;
-		border-color: #58585a;
-		padding: 10px 10px 14px;
-		border-style: solid;
-		border-width: 2px;
+		text-align: center;
 	}
-	.timeline-link {
-		color: #ccc;
-	}
-	.timeline-link:hover {
+	.timeline-col-work > div:nth-child(1) {
+		font-size: 18px;
 		color: #fff;
-		border-color: #fff;
+	}
+	timeline,
+	.timeline-col-work > div:nth-child(2),
+	.timeline-col-work > div:last-child,
+	.timeline-col-work {
+		width: 200px;
+	}
+	.timeline-col-work {
+		float: none;
+		margin-bottom: 30px;
+	}
+
+	.timeline-dates {
+		background-color: #666;
+		font-family: 'Source Sans Pro', sans-serif;
+		border-radius: 8px;
+		font-size: 12px;
+		padding: 0 8px;
+		margin: 8px 0;
+		color: #333;
+		display: table;
 	}
 
 	.img-detail {
 		background-image: url('/graphics/svg/detail.svg');
 		width: 24px;
 		height: 24px;
+	}
+	.img-icon-link {
+		background-image: url('/graphics/svg/icon-link.svg');
+		width: 18px;
+		height: 18px;
+		cursor: pointer;
+		opacity: 0.5;
+		margin: 8px 0 0;
+	}
+	.img-icon-link:hover {
+		opacity: 1;
 	}
 
 /*   ME   */
@@ -525,10 +498,14 @@ and (min-width: 561px) {
 
 /*   COVER   */
 
-	.img-title-cover {
-		background-image: url('/graphics/svg/title-cover.svg');
-		height: 54px;
-		margin: 170px 0 10px;
+	#cover > div:first-child {
+		padding: 220px 30px 10px;
+	}
+	.social {
+		margin-top: 113px;
+	}
+	.social > div {
+		margin-bottom: 0;
 	}
 
 /*   BADGES   */
@@ -565,14 +542,15 @@ and (min-width: 561px) {
 
 /*   TIMELINE   */
 
-	#timeline {
-		width: 393px;
-		margin: 40px 0 80px;
+	timeline {
+		width: 400px;
+		margin: 80px 0 0;
 	}
-
-	.timeline-spacer-workRight > div:nth-child(2) {
-		height: 100px;
-		padding-top: 26px;
+	.timeline-col-work {
+		float: left;
+	}
+	.timeline-col-work:nth-child(2n+3) {
+		clear: left;
 	}
 }
 
@@ -655,20 +633,14 @@ and (min-width : 800px) {
 
 /*   TIMELINE   */
 
-	#timeline {
-		width: 662px;
+	timeline {
+		width: 600px;
 		margin: 40px 0 0;
 	}
-	#timeline > div {
-		float: left;
+	.timeline-col-work:nth-child(2n+3) {
+		clear: none;
 	}
-	.timeline-col-work {
-		width: 269px;
-	}
-	.timeline-col-work > div {
-		width: 267px;
-	}
-	.timeline-col-dates {
-		width: 62px;
+	.timeline-col-work:nth-child(3n+4) {
+		clear: left;
 	}
 }
