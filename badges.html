@@ -1,8 +1,30 @@
 <div>
-	<div ng-repeat="badge in badges" class="badge">
+	<div ng-repeat="badge in badges" 
+		 class="badge"
+		 ng-mouseover="hideAllBadges(); badge.style='zoom-show';">
 		<div class="img-badge"
-			 style="background-image: url('{{badge.src}}');"
-			 ng-mouseover="badge.style='zoom-show'; hideDefaultBadge(badge.zoom);"
-			 ng-mouseleave="badge.style='zoom-hide'; showDefaultBadge(badge.zoom);"></div>
+			 style="background-image: url('{{badge.src}}');"></div>
+		<div class="badge-notes">{{badge.notes}}</div>
+	</div>
+</div>
+
+<div>
+	<div ng-repeat="badge in badges"
+		 class="scale"
+		 ng-mouseover="hideAllBadges(); badge.style='zoom-show';"
+		 align="center">
+		<div class="img-badge-scale-{{badge.scale}}"></div>
+	</div>
+</div>
+
+<div>
+	<div id="responsive">
+		<div ng-repeat="badge in badges"
+			 class="{{badge.style}}"
+			 post-badges-directive>
+			<div class="img-zoom"
+				 align="center"></div>
+			<div>{{badge.notes}}</div>
+		</div>
 	</div>
 </div>

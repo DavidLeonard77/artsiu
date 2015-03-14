@@ -53,38 +53,6 @@
 
 			];
 
-			// Chart mouseovers
-				$('.chart-link-design').mouseover(function(){
-					$('.img-chart-pie-b').css({ 'opacity' : '0.25' });
-					$('.img-chart-pie-c').css({ 'opacity' : '0.25' });
-				}).mouseout(function(){
-					$('.img-chart-pie-b').css({ 'opacity' : '1' });
-					$('.img-chart-pie-c').css({ 'opacity' : '1' });
-				});
-
-				$('.chart-link-code').mouseover(function(){
-					$('.img-chart-pie-a').css({ 'opacity' : '0.25' });
-					$('.img-chart-pie-c').css({ 'opacity' : '0.25' });
-				}).mouseout(function(){
-					$('.img-chart-pie-a').css({ 'opacity' : '1' });
-					$('.img-chart-pie-c').css({ 'opacity' : '1' });
-				});
-
-				$('.chart-link-html').mouseover(function(){
-					$('.img-chart-pie-a').css({ 'opacity' : '0.25' });
-					$('.img-chart-pie-b').css({ 'opacity' : '0.25' });
-				}).mouseout(function(){
-					$('.img-chart-pie-a').css({ 'opacity' : '1' });
-					$('.img-chart-pie-b').css({ 'opacity' : '1' });
-				});
-
-			// Load images
-				$('.img-responsive').load('/graphics/svg/responsive.svg');
-				$('.img-chart-pie-a').load('/graphics/svg/chart-pie-a.svg');
-				$('.img-chart-pie-b').load('/graphics/svg/chart-pie-b.svg');
-				$('.img-chart-pie-c').load('/graphics/svg/chart-pie-c.svg');
-				$('.img-chart-pie-center').load('/graphics/svg/chart-pie-center.svg');
-
 			// Cover load animations
 				$('#cover').css({ 'opacity' : '1' });
 
@@ -105,44 +73,23 @@
 
 					var scroll = $(this).scrollTop();
 
-					if (scroll > 300) $('.menu-container').css({ 'opacity' : '1', 'margin-top' : '0' });
+					if (scroll > 100) $('.menu-container').css({ 'opacity' : '1', 'margin-top' : '0' });
 					else $('.menu-container').css({ 'opacity' : '0', 'margin-top' : '-20px' });
 
 					if (scroll < 350) $('#cover').css({ 'opacity' : '1' });
 					else $('#cover').css({ 'opacity' : '0' });
 
-					if (scroll < 450 || scroll > 1150) {
-						$('badges').css({ 'opacity' : '0' });
-						$('#responsive').css({ 'opacity' : '0' });
-					} else {
-						$('badges').css({ 'opacity' : '1' });
-						$('#responsive').css({ 'opacity' : '1' });
-					}
+					if (scroll < 150 || scroll > 750) $('#me').css({ 'opacity' : '0' });
+					else $('#me').css({ 'opacity' : '1' });
 
-					if (scroll < 550 || scroll > 1600) {
-						$('.img-chart-pie-center').css({ 'opacity' : '0' });
-						$('.img-chart-pie-a').css({ 'opacity' : '0' }).removeClass('rotate0').addClass('rotate90');
-						$('.img-chart-pie-b').css({ 'opacity' : '0' }).removeClass('rotate0').addClass('rotate90');
-						$('.img-chart-pie-c').css({ 'opacity' : '0' }).removeClass('rotate0').addClass('rotate90');
-					} else {
-						setTimeout(function(){ $('.img-chart-pie-a').css({ 'opacity' : '1' }).removeClass('rotate90').addClass('rotate0');
-							setTimeout(function(){ $('.img-chart-pie-b').css({ 'opacity' : '1' }).removeClass('rotate90').addClass('rotate0');
-								setTimeout(function(){ $('.img-chart-pie-c').css({ 'opacity' : '1' }).removeClass('rotate90').addClass('rotate0');
-									setTimeout(function(){ $('.img-chart-pie-center').css({ 'opacity' : '1' });
-									},700);
-								},700);
-							},700);
-						},700);
-					};
+					if (scroll < 200 || scroll > 1100) $('#badges').css({ 'opacity' : '0' });
+					else $('#badges').css({ 'opacity' : '1' });
 
-					if (scroll < 600 || scroll > 1750) $('.chart-overlay-container').css({ 'opacity' : '0' });
-					else $('.chart-overlay-container').css({ 'opacity' : '1' });
+					if (scroll < 400) $('#timeline').css({ 'opacity' : '0' });
+					else $('#timeline').css({ 'opacity' : '1' });
 
-					if (scroll < 1200) $('timeline').css({ 'opacity' : '0' });
-					else $('timeline').css({ 'opacity' : '1' });
-
-					if (scroll > 1450) $('#me').css({ 'opacity' : '1' });
-					else $('#me').css({ 'opacity' : '0' });
+					if (scroll > 500) $('#fun').css({ 'opacity' : '1' });
+					else $('#fun').css({ 'opacity' : '0' });
 
 				});
 
@@ -165,51 +112,80 @@
 					$scope.badges = [
 
 						{
-							src : '/graphics/svg/badge-photoshop.svg',
-							zoom : '/graphics/svg/zoom-photoshop.svg',
-							notes : 'Adobe Photoshop',
+							src : '/graphics/svg/badge-ui.svg',
+							zoom : '/graphics/svg/zoom-ui.svg',
+							notes : 'UI Design',
+							scale : 6,
 							style : 'zoom-hide'
 						},{
-							src : '/graphics/svg/badge-illustrator.svg',
-							zoom : '/graphics/svg/zoom-illustrator.svg',
-							notes : 'Adobe Illustrator',
+							src : '/graphics/svg/badge-adobe.svg',
+							zoom : '/graphics/svg/zoom-adobe.svg',
+							notes : 'Adobe: Ps, Ai, Fw, Id',
+							scale : 7,
 							style : 'zoom-hide'
 						},{
 							src : '/graphics/svg/badge-html5.svg',
 							zoom : '/graphics/svg/zoom-html5.svg',
 							notes : 'HTML5',
+							scale : 6,
 							style : 'zoom-hide'
 						},{
 							src : '/graphics/svg/badge-css3.svg',
 							zoom : '/graphics/svg/zoom-css3.svg',
 							notes : 'CSS3',
+							scale : 6,
 							style : 'zoom-hide'
 						},{
 							src : '/graphics/svg/badge-responsive.svg',
 							zoom : '/graphics/svg/zoom-responsive.svg',
 							notes : 'Mobile-First Responsive Design',
+							scale : 6,
 							style : 'zoom-show'
 						},{
 							src : '/graphics/svg/badge-javascript.svg',
 							zoom : '/graphics/svg/zoom-javascript.svg',
-							notes : 'Javascript',
+							notes : 'Javascript / jQuery',
+							scale : 5,
 							style : 'zoom-hide'
 						},{
 							src : '/graphics/svg/badge-angular.svg',
 							zoom : '/graphics/svg/zoom-angular.svg',
 							notes : 'Angular.js',
+							scale : 5,
 							style : 'zoom-hide'
 						},{
 							src : '/graphics/svg/badge-ee.svg',
 							zoom : '/graphics/svg/zoom-ee.svg',
 							notes : 'Expression Engine',
+							scale : 6,
+							style : 'zoom-hide'
+						},{
+							src : '/graphics/svg/badge-restful.svg',
+							zoom : '/graphics/svg/zoom-restful.svg',
+							notes : 'RESTful Api / JSON',
+							scale : 6,
 							style : 'zoom-hide'
 						}
 
 					];
 
-					$scope.hideDefaultBadge = function(item){
-						if (item != '/graphics/svg/zoom-responsive.svg') $scope.badges[4].style = 'zoom-hide';
+					var timeline = function(){
+						var e = '.img-timeline';
+						if ($(window).width() < 561) $(e).load('/graphics/svg/timeline-small.svg');
+						else if ($(window).width() < 800) $(e).load('/graphics/svg/timeline-medium.svg');
+						else if ($(window).width() < 1200) $(e).load('/graphics/svg/timeline.svg');
+						else $(e).load('/graphics/svg/timeline-large.svg');
+					}
+					timeline();
+
+					$(window).resize(function(){
+						timeline();
+					});
+
+					$scope.hideAllBadges = function(item){
+						for (var c=0, l=$scope.badges.length; c<l; c++) {
+							$scope.badges[c].style = 'zoom-hide';
+						}
 					}
 					$scope.showDefaultBadge = function(){
 						$scope.badges[4].style = 'zoom-show';
@@ -217,42 +193,6 @@
 
 				},
 				controllerAs: 'badgesCtrl'
-			}
-		})
-		.directive('timeline',function(){
-			return {
-				restrict: 'E',
-				templateUrl: 'index.php/default/timeline.html',
-				controller: function($scope){
-
-					$scope.timeline = [
-
-						{
-							title : 'Gallto',
-							dates : '2012-2013',
-							info : ['UI design and development'],
-							url : 'http://64.207.154.226'
-						},{
-							title : 'Lakeside Photoworks',
-							dates : '2012-2015',
-							info : ['UI design and development'],
-							url : 'http://www.lakesidephotoworks.com'
-						},{
-							title : 'HL Photography',
-							dates : '2009-2015',
-							info : ['UI design and development'],
-							url : 'http://www.hermanleonard.com'
-						},{
-							title : 'Couchster',
-							dates : '2014-2015',
-							info : ['jquery/angular.js development'],
-							url : 'http://www.couchster.com'
-						}
-
-					];
-
-				},
-				controllerAs: 'timelineCtrl'
 			}
 		})
 		.directive('postMenuDirective',function(){
