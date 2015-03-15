@@ -135,11 +135,11 @@
 	}
 
 	.title-badges {
-		color: #8C9941;
-		padding: 20px 0 0 0;
+		color: #58595B;
+		padding: 40px 0 0 0;
 	}
 	.title-timeline {
-		color: #3E9BBA;
+		color: #D7DF23;
 		padding: 100px 0 40px 0;
 	}
 	.title-fun {
@@ -230,7 +230,7 @@
 	.img-cover {
 		background-image: url('/graphics/bmp/background.jpg');
 		width: 100%;
-		min-height: 500px;
+		min-height: 560px;
 		background-size: cover;
 	}
 	.img-cover > div:first-child {
@@ -241,12 +241,12 @@
 	}
 	.img-title-cover {
 		background-image: url('/graphics/svg/title-cover.svg');
-		height: 54px;
+		height: 63px;
 	}
 	.img-title-cover-sub {
-		background-image: url('/graphics/svg/title-cover-sub.svg');
-		height: 22px;
-		margin-top: 10px;
+		background-image: url('/graphics/svg/logo-ui.svg');
+		height: 56px;
+		margin-top: 17px;
 	}
 
 	.social {
@@ -406,6 +406,10 @@ and (min-width: 561px) {
 
 /*   COVER   */
 
+	.img-title-cover-sub {
+		margin-top: 37px;
+	}
+
 	.img-cover {
 		min-height: 600px;
 	}
@@ -413,7 +417,7 @@ and (min-width: 561px) {
 		padding: 170px 30px 10px;
 	}
 	.social {
-		margin-top: 113px;
+		margin-top: 40px;
 		width: 422px;
 	}
 	.social > div {
@@ -475,7 +479,7 @@ and (min-width: 561px) {
 	}
 
 	[class*="img-badge-scale"] {
-		margin: 1px 0;
+		margin: 2px 0 0 0;
 		height: 16px;
 		width: 134px;
 		float: left;
