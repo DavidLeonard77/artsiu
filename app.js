@@ -82,7 +82,7 @@
 					if (scroll < 150 || scroll > 750) $('#me').css({ 'opacity' : '0' });
 					else $('#me').css({ 'opacity' : '1' });
 
-					if (scroll < 200 || scroll > 1100) $('#badges').css({ 'opacity' : '0' });
+					if (scroll < 200 || scroll > 1400) $('#badges').css({ 'opacity' : '0' });
 					else $('#badges').css({ 'opacity' : '1' });
 
 					if (scroll < 400) $('#timeline').css({ 'opacity' : '0' });
