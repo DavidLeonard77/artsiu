@@ -314,6 +314,39 @@
 		margin: 0 0 20px 0;
 	}
 
+/*   BADGES   */
+
+	#badges {
+		background-color: #E6E7E8;
+	}
+
+	.badge {
+		margin-bottom: 20px;
+		display: table;
+		width: 100%;
+	}
+
+	.img-badge {
+		float: right;
+	}
+	.badge-notes {
+		float: left;
+	}
+
+	.img-badge {
+		height: 17px;
+		width: 25px;
+		margin: 2px 10px 0;
+	}
+
+	.badge-container > div:nth-child(1),
+	#responsive {
+		visibility: hidden;
+		position: absolute;
+		width: 0;
+		height: 0;
+	}
+
 /*   CLIENTS   */
 
 	#clients,
@@ -361,54 +394,6 @@
  		color: #333;
 		background-color: #fff;
  		box-shadow: 0 0 5px #ccc;
-	}
-
-/*   BADGES   */
-
-	#badges {
-		background-color: #E6E7E8;
-	}
-
-	.badge {
-		margin-bottom: 20px;
-		display: table;
-		width: 100%;
-	}
-
-	.img-badge {
-		float: right;
-	}
-	.badge-notes {
-		float: left;
-	}
-
-	.img-badge {
-		height: 17px;
-		width: 25px;
-		margin: 2px 10px 0;
-	}
-
-	.badge-container > div:nth-child(1),
-	#responsive {
-		visibility: hidden;
-		position: absolute;
-		width: 0;
-		height: 0;
-	}
-
-/*   TIMELINE   */
-
-	.img-timeline {
-		width: 100%;
-	}
-
-	.link-timeline:hover text{
-		fill: rgb(255, 255, 255);
-	}
-
-	.link-timeline:hover .timeline-bubble {
-		fill: rgb(88, 89, 91);
-		cursor: pointer;
 	}
 
 /*   FUN   */
@@ -501,16 +486,6 @@ and (min-width: 561px) {
 		margin-top: 0;
 	}
 
-/*   CLIENTS   */
-
-	.client {
-		width: 50%;
-		float: left;
-	}
-	.client:nth-child(2n+3) {
-		clear: left;
-	}
-
 /*   BADGES   */
 
 	badges > div {
@@ -568,6 +543,16 @@ and (min-width: 561px) {
 	}
 	#responsive > div {
 		position: absolute;
+	}
+
+/*   CLIENTS   */
+
+	.client {
+		width: 50%;
+		float: left;
+	}
+	.client:nth-child(2n+3) {
+		clear: left;
 	}
 
 }
