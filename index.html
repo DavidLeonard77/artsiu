@@ -38,7 +38,6 @@
 				<div class="menu-circle"
 					 ng-repeat="menuItem in menuItems"
 					 post-menu-directive>
-					<div class="img-menu-bg-{{menuItem.id}}"></div>
 					<div class="img-menu-{{menuItem.id}}"
 					 	 ng-mouseover="popup='popup-show'; getMargin(menuItem.id);"
 						 ng-mouseleave="popup='popup-hide'"
@@ -55,7 +54,7 @@
 	<div class="canvas" align="center">
 
 		<!-- COVER -->
-		<div id="cover">
+		<div id="cover" align="right">
 			<div class="img-cover"
 				 align="center">
 				<div>
@@ -64,21 +63,11 @@
 				</div>
 				<div>
 					<div class="social">
-						<div class="col-1-3 link-social"
+						<div ng-repeat="menuItem in menuItems"
+							 class="col-1-3 link-social"
 							 align="center">
-							<div class="img-social-pin"></div>
-							Bay Area
-						</div>
-						<div class="col-1-3 link-social"
-							 align="center"
-							 ng-click="go('mailto: dleonard77@me.com')">
-							<div class="img-social-envelope"></div>
-							dleonard77@me.com
-						</div>
-						<div class="col-1-3 link-social"
-							 align="center">
-							<div class="img-social-cell"></div>
-							818-370-8773
+							<div class="img-social-{{menuItem.id}}"></div>
+							{{menuItem.popup}}
 						</div>
 					</div>
 				</div>
@@ -97,7 +86,7 @@
 				<div class="col-1-1">
 					<div class="txt-stretch-intro">
 						<div><div class="img-me"></div></div>
-						<div>I create user interfaces that are clean and intuitive while applying a high degree of focus to detail, consistency and excellence throughout a project.</div>
+						<div>I create user interfaces that are clean and intuitive while applying a high degree of focus to detail, consistency and excellence throughout a project. I have developed successful websites using mobile-first responsive designs and incorporating Api functionality, JS frameworks, and CMS. I love to create fantastic web solutions with effective UI and I am committed to providing the highest quality of service at all times.</div>
 					</div>
 				</div>
 			</div>

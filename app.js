@@ -4,20 +4,6 @@
 		.module('resume',[])
 		.controller('siteCtrl',function($scope){
 
-			$scope.$on('postMenuDirective', function(scope, element, attrs){
-
-				for (var menuItem=0, len=$scope.menuItems.length; menuItem<len; menuItem++) {
-
-					var id = $scope.menuItems[menuItem].id,
-						src = $scope.menuItems[menuItem].src,
-						background = $scope.menuItems[menuItem].background;
-
-					$('.img-menu-' + id).load(src);
-					$('.img-menu-bg-' + id).load(background);
-				}
-
-			});
-
 			$scope.$on('postBadgesDirective', function(scope, element, attrs){
 
 				var c = 0;
@@ -37,23 +23,17 @@
 			$scope.menuItems = [
 
 				{
-					src : '/graphics/svg/menu-pin.svg',
-					background : '/graphics/svg/menu-ring-a.svg',
 					popup : 'SF Bay Area',
 					location : '',
-					id : 'menu00'
+					id : 'pin'
 				},{
-					src : '/graphics/svg/menu-envelope.svg',
-					background : '/graphics/svg/menu-ring-b.svg',
 					popup : 'dleonard77@me.com',
 					location : 'mailto: dleonard77@me.com',
-					id : 'menu01'
+					id : 'envelope'
 				},{
-					src : '/graphics/svg/menu-cell.svg',
-					background : '/graphics/svg/menu-ring-c.svg',
 					popup : '818-370-8773',
 					location : '',
-					id : 'menu02'
+					id : 'cell'
 				}
 
 			];
@@ -240,11 +220,6 @@
 				},
 				controllerAs: 'clientsCtrl'
 			}
-		})
-		.directive('postMenuDirective',function(){
-			return function(scope, element, attrs) {
-				if (scope.$last) setTimeout(function(){ scope.$emit('postMenuDirective', element, attrs) }, 1);
-			};
 		})
 		.directive('postBadgesDirective',function(){
 			return function(scope, element, attrs) {
