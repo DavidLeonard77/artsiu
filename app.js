@@ -23,9 +23,14 @@
 				var c = 0;
 				$('.img-zoom').each(function(){
 					$(this).load($scope.badges[c].zoom);
-					console.log($scope.badges[c].zoom);
 					c++;
 				});
+
+			});
+
+			$scope.$on('postClientsDirective', function(scope, element, attrs){
+
+				$scope.clientResize();
 
 			});
 
@@ -195,6 +200,50 @@
 				controllerAs: 'badgesCtrl'
 			}
 		})
+		.directive('clients',function(){
+			return {
+				restrict: 'E',
+				templateUrl: 'index.php/default/clients.html',
+				controller: function($scope){
+
+					$scope.clients = [
+
+						{
+							src : '/graphics/bmp/preview-giving.jpg',
+							name : 'GivingImages',
+							url : 'http://www.givingimages.com'
+						},{
+							src : '/graphics/bmp/preview-gallto.jpg',
+							name : 'Gallto',
+							url : 'http://64.207.154.226'
+						},{
+							src : '/graphics/bmp/preview-hl.jpg',
+							name : 'HL Photography',
+							url : 'http://www.hermanleonard.com'
+						},{
+							src : '/graphics/bmp/preview-couchster.jpg',
+							name : 'Couchster',
+							url : 'http://www.couchster.com'
+						}
+
+					];
+
+					$scope.clientResize = function () {
+	
+						var w = $(window).width();
+						if (w > 561 && w < 1200) w/=2;
+						if (w > 1200) w/=4;
+
+						$('.client, .client > div, .client-name').each(function(){ $(this).css({ 'width' : w, 'height' : w }) });
+
+					};
+
+					$(window).resize(function(){ $scope.clientResize() });
+
+				},
+				controllerAs: 'clientsCtrl'
+			}
+		})
 		.directive('postMenuDirective',function(){
 			return function(scope, element, attrs) {
 				if (scope.$last) setTimeout(function(){ scope.$emit('postMenuDirective', element, attrs) }, 1);
@@ -203,6 +252,11 @@
 		.directive('postBadgesDirective',function(){
 			return function(scope, element, attrs) {
 				if (scope.$last) setTimeout(function(){ scope.$emit('postBadgesDirective', element, attrs) }, 1);
+			};
+		})
+		.directive('postClientsDirective',function(){
+			return function(scope, element, attrs) {
+				if (scope.$last) setTimeout(function(){ scope.$emit('postClientsDirective', element, attrs) }, 1);
 			};
 		});
 

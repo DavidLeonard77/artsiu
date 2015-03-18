@@ -82,6 +82,7 @@
 	.img-title-cover-sub,
 	.social,
 	#me,
+	.img-client,
 	#badges,
 	#responsive,
 	#responsive > div,
@@ -313,6 +314,55 @@
 		margin: 0 0 20px 0;
 	}
 
+/*   CLIENTS   */
+
+	#clients,
+	clients {
+		display: table;
+		width: 100%;
+	}
+	.client {
+		cursor: pointer;
+		width: 100%;
+		background-color: #58595B;
+	}
+	.client > div {
+		position: absolute;
+		display: table;
+	}
+	.img-client {
+ 		background-color: #333;
+ 		background-size: cover;
+ 		background-blend-mode: luminosity;
+ 		opacity: 0.2;
+	}
+	.client:hover .img-client {
+ 		background-blend-mode: normal;
+ 		opacity: 1;
+	}
+	.client-name > div {
+		display: table-cell;
+ 		vertical-align: middle;
+ 		text-align: center;
+	}
+	.client-name-spacer {
+		display; table;
+		width: 100%;
+	}
+	.client-name-spacer > div {
+		background-color: #333;
+		padding: 10px 16px;
+ 		color: #fff;
+ 		font-size: 24px;
+ 		display: table;
+ 		box-shadow: 0 0 5px #111;
+	}
+	.client:hover .client-name-spacer > div {
+ 		color: #333;
+		background-color: #fff;
+ 		box-shadow: 0 0 5px #ccc;
+	}
+
 /*   BADGES   */
 
 	#badges {
@@ -451,6 +501,16 @@ and (min-width: 561px) {
 		margin-top: 0;
 	}
 
+/*   CLIENTS   */
+
+	.client {
+		width: 50%;
+		float: left;
+	}
+	.client:nth-child(2n+3) {
+		clear: left;
+	}
+
 /*   BADGES   */
 
 	badges > div {
@@ -529,6 +589,24 @@ and (min-width : 800px) {
 
 	.footnote {
 		margin: 14px 40px 0 0;
+	}
+
+}
+
+@media only screen
+and (min-width : 1200px) {
+
+/*   CLIENTS   */
+
+	.client {
+		width: 25%;
+		float: left;
+	}
+	.client:nth-child(2n+3) {
+		clear: none;
+	}
+	.client:nth-child(4n+5) {
+		clear: left;
 	}
 
 }
