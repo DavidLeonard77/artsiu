@@ -126,25 +126,24 @@
 		text-align: justify;
 		text-justify: distribute;
 		line-height: 40px;
+		padding: 20px;
 	}
 
 /*   TITLES   */
 
 	[class*='title-'] {
-		font-size: 36px;
+		color: #58595B;
+		font-size: 56px;
 		text-transform: uppercase;
 	}
 
 	.title-badges {
-		color: #58595B;
 		padding: 40px 0 0 0;
 	}
-	.title-timeline {
-		color: #D7DF23;
-		padding: 100px 0 40px 0;
+	.title-clients {
+		padding: 70px 0 0 0;
 	}
 	.title-fun {
-		color: #58595B;
 		padding: 40px 0 0 0;
 	}
 
@@ -245,7 +244,8 @@
 /*   COVER   */
 
 	.img-cover {
-		background-image: url('/graphics/bmp/background.jpg');
+	/*	background-image: url('/graphics/bmp/background.jpg');*/
+		background-color: #333;
 		width: 100%;
 		min-height: 560px;
 		background-size: cover;
@@ -327,9 +327,6 @@
 
 /*   BADGES   */
 
-	#badges {
-		background-color: #E6E7E8;
-	}
 
 	.badge {
 		margin-bottom: 20px;
@@ -361,14 +358,20 @@
 /*   CLIENTS   */
 
 	#clients,
-	clients {
+	clients,
+	clients > div {
 		display: table;
 		width: 100%;
+		text-align: center;
+	}
+	clients {
+		padding: 20px;
 	}
 	.client {
 		cursor: pointer;
 		width: 100%;
-		background-color: #58595B;
+		margin: 20px;
+ 		box-shadow: 0 0 5px #ccc;
 	}
 	.client > div {
 		position: absolute;
@@ -394,15 +397,15 @@
 		width: 100%;
 	}
 	.client-name-spacer > div {
-		border: 2px solid #fff;
+		border: 2px solid #58595B;
 		padding: 10px 16px;
- 		color: #fff;
+ 		color: #58595B;
  		font-size: 24px;
  		display: table;
 	}
 	.client:hover .client-name-spacer > div {
- 		color: #333;
-		background-color: #fff;
+ 		color: #fff;
+		background-color: #58595B;
  		box-shadow: 0 0 5px #ccc;
 	}
 
@@ -420,7 +423,7 @@ and (min-width: 561px) {
 /*   DEFAULT   */
 
 	.grid-pad {
-		padding: 30px 0 0 30px;
+		padding: 40px 0 0 30px;
 	}
 	.grid-pad > [class*='col-'] {
 		padding: 0 30px 30px 0;
@@ -447,6 +450,10 @@ and (min-width: 561px) {
 
 	[class*="col-"] {
 		float: right;
+	}
+
+	[class*='txt-stretch'] {
+		padding: 80px;
 	}
 
 /*   COVER   */
@@ -480,20 +487,11 @@ and (min-width: 561px) {
 	}
 
 	.txt-stretch-intro > div {
-		display: table-cell;
-		vertical-align: top;
-		width: auto;
-	}
-	.txt-stretch-intro > div:first-child {
-		padding: 0;
-	}
-	.txt-stretch-intro > div:last-child {
-		padding: 10px 0 10px 40px;
+		width: 100%;
 	}
 
 	.img-me {
-		width: 130px;
-		margin-top: 20px;
+		margin-top: -20px;
 	}
 
 /*   BADGES   */
@@ -556,6 +554,10 @@ and (min-width: 561px) {
 	}
 
 /*   CLIENTS   */
+
+	clients {
+		padding: 60px;
+	}
 
 	.client {
 		width: 50%;

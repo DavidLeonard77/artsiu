@@ -1,14 +1,16 @@
-<div ng-repeat="client in clients"
-	 ng-click="go(client.url);"
-	 class="client"
-	 post-clients-directive>
-	<div class="img-client"
-		 style="background-image: url('{{client.src}}');"></div>
-	<div class="client-name">
-		<div>
-			<div class="client-name-spacer"
-				 align="center">
-				<div>{{client.name}}</div>
+<div>
+	<div ng-repeat="client in clients"
+		 ng-click="go(client.url);"
+		 class="client"
+		 post-clients-directive>
+		<div class="img-client"
+			 style="background-image: url('{{client.src}}');"></div>
+		<div class="client-name">
+			<div>
+				<div class="client-name-spacer"
+					 align="center">
+					<div>{{client.name}}</div>
+				</div>
 			</div>
 		</div>
 	</div>

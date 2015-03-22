@@ -58,19 +58,19 @@
 
 					var scroll = $(this).scrollTop();
 
-					if (scroll > 100) $('.menu-container').css({ 'opacity' : '1', 'margin-top' : '0' });
+					if (scroll > 0) $('.menu-container').css({ 'opacity' : '1', 'margin-top' : '0' });
 					else $('.menu-container').css({ 'opacity' : '0', 'margin-top' : '-20px' });
 
-					if (scroll < 350) $('#cover').css({ 'opacity' : '1' });
-					else $('#cover').css({ 'opacity' : '0' });
+					if (scroll > 350) $('#cover').css({ 'opacity' : '0' });
+					else $('#cover').css({ 'opacity' : '1' });
 
-					if (scroll < 150 || scroll > 750) $('#me').css({ 'opacity' : '0' });
-					else $('#me').css({ 'opacity' : '1' });
+					if (scroll > 150 || scroll < 750) $('#me').css({ 'opacity' : '1' });
+					else $('#me').css({ 'opacity' : '0' });
 
-					if (scroll < 200 || scroll > 1400) $('#badges').css({ 'opacity' : '0' });
-					else $('#badges').css({ 'opacity' : '1' });
+					if (scroll > 1100) $('#badges').css({ 'opacity' : '1' });
+					else $('#badges').css({ 'opacity' : '0' });
 
-					if (scroll > 500) $('#fun').css({ 'opacity' : '1' });
+					if (scroll > 1700) $('#fun').css({ 'opacity' : '1' });
 					else $('#fun').css({ 'opacity' : '0' });
 
 				});
@@ -144,7 +144,7 @@
 						},{
 							src : '/graphics/svg/badge-restful.svg',
 							zoom : '/graphics/svg/zoom-restful.svg',
-							notes : 'RESTful Api / JSON',
+							notes : 'RESTful API / JSON',
 							scale : 6,
 							style : 'zoom-hide'
 						}
@@ -207,12 +207,22 @@
 
 					$scope.clientResize = function () {
 	
-						var w = $(window).width();
-						if (w > 561 && w < 1200) w/=2;
-						if (w > 1200) w/=4;
+						var w  = $('clients > div').width(),
+							ww = $(window).width(),
+							wh = ww;
 
+						if (w > 561 && w <= 800) {
+							w/=2;
+						} else if (w > 800 && w <= 1200) {
+							w/=2;
+						} else if (w > 1200) {
+							w/=4;
+							wh/=4;
+						}
+						w-=40;
+
+						$('#clients').css({ 'width' : ww, 'height' : wh });
 						$('.client, .client > div, .client-name').each(function(){ $(this).css({ 'width' : w, 'height' : w }) });
-
 					};
 
 					$(window).resize(function(){ $scope.clientResize() });
