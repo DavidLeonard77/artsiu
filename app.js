@@ -20,6 +20,16 @@
 
 			});
 
+			$scope.$on('postMenuDirective', function(scope, element, attrs){		
+
+				// Load cover social icons
+				for (var c=0, l=$scope.menuItems.length; c<l; c++) {
+					$('.img-social-'+$scope.menuItems[c].id).load('/graphics/svg/cover-'+$scope.menuItems[c].id+'.svg');
+					console.log('.img-social-'+$scope.menuItems[c].id);
+				}
+
+			});
+
 			$scope.menuItems = [
 
 				{
@@ -53,25 +63,37 @@
 					$('.social').css({ 'opacity' : '1' });
 				},2000);
 
+
 			// Scroll point animations
 				$(window).scroll(function(event){
 
 					var scroll = $(this).scrollTop();
 
-					if (scroll > 0) $('.menu-container').css({ 'opacity' : '1', 'margin-top' : '0' });
-					else $('.menu-container').css({ 'opacity' : '0', 'margin-top' : '-20px' });
+					if (scroll > 350) {
+						$('#cover').css({ 'opacity' : '0' });
+						$('.menu-container').css({ 'opacity' : '1', 'margin-top' : '0' });
+					} else {
+						$('#cover').css({ 'opacity' : '1' });
+						$('.menu-container').css({ 'opacity' : '0', 'margin-top' : '-20px' });
+					}
 
-					if (scroll > 350) $('#cover').css({ 'opacity' : '0' });
-					else $('#cover').css({ 'opacity' : '1' });
+					if (scroll > 0 || scroll < 750) {
+						$('#me').css({ 'opacity' : '1' });
+					} else {
+						$('#me').css({ 'opacity' : '0' });
+					}
 
-					if (scroll > 150 || scroll < 750) $('#me').css({ 'opacity' : '1' });
-					else $('#me').css({ 'opacity' : '0' });
+					if (scroll > 1100) {
+						$('#badges').css({ 'opacity' : '1' });
+					} else {
+						$('#badges').css({ 'opacity' : '0' });
+					}
 
-					if (scroll > 1100) $('#badges').css({ 'opacity' : '1' });
-					else $('#badges').css({ 'opacity' : '0' });
-
-					if (scroll > 1700) $('#fun').css({ 'opacity' : '1' });
-					else $('#fun').css({ 'opacity' : '0' });
+					if (scroll > 1700) {
+						$('#fun').css({ 'opacity' : '1' });
+					} else {
+						$('#fun').css({ 'opacity' : '0' });
+					}
 
 				});
 
@@ -114,7 +136,7 @@
 						},{
 							src : '/graphics/svg/badge-css3.svg',
 							zoom : '/graphics/svg/zoom-css3.svg',
-							notes : 'CSS3',
+							notes : 'CSS3 / Sass',
 							scale : 6,
 							style : 'zoom-hide'
 						},{
@@ -126,7 +148,7 @@
 						},{
 							src : '/graphics/svg/badge-javascript.svg',
 							zoom : '/graphics/svg/zoom-javascript.svg',
-							notes : 'Javascript / jQuery',
+							notes : 'Javascript / jQuery / AJAX',
 							scale : 5,
 							style : 'zoom-hide'
 						},{
@@ -230,6 +252,11 @@
 				},
 				controllerAs: 'clientsCtrl'
 			}
+		})
+		.directive('postMenuDirective',function(){
+			return function(scope, element, attrs) {
+				if (scope.$last) setTimeout(function(){ scope.$emit('postMenuDirective', element, attrs) }, 1);
+			};
 		})
 		.directive('postBadgesDirective',function(){
 			return function(scope, element, attrs) {

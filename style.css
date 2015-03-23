@@ -87,7 +87,8 @@
 	#responsive,
 	#responsive > div,
 	#timeline,
-	#fun {
+	#fun,
+	.client:hover .client-name-spacer > div {
 		-webkit-transition-property: opacity;
 		-webkit-transition-duration: 0.7s;
 		-webkit-transition-timing-function: ease-out;
@@ -127,6 +128,7 @@
 		text-justify: distribute;
 		line-height: 40px;
 		padding: 20px;
+		max-width: 828px;
 	}
 
 /*   TITLES   */
@@ -165,37 +167,40 @@
 		margin-left: -40px;
 	}
 
-	.menu-container div.popup {
-		box-shadow: 0 0 4px #666;
-		background-color: #58595B;
-		color: #fff;
+	.menu-container .popup {
+		color: #58595B;
+		background-color: #fff;
 		height: 30px;
-		padding: 10px;
+		padding: 10px 13px;
 		margin-top: 50px;
+		box-shadow: 0 0 4px #ccc;
 	}
 
 	[class*='popup'],
-	.menu-circle,
-	.menu-circle-white {
+	.menu-box {
 		height: 40px;
-		border-radius: 40px;
 	}
-	.menu-circle {
+	.menu-box {
 		cursor: pointer;
 		float: right;
-		margin: 0 30px;
+		margin: 0 25px;
 	}
-	.menu-circle > div:nth-child(1),
-	.menu-circle > div:nth-child(2) {
+	.menu-box > div:nth-child(1),
+	.menu-box > div:nth-child(2) {
 		position: absolute;
 		height: 40px;
 	}
 	[class*='img-menu'] {
-		background-blend-mode: difference;
+		background-color: #58595B;
+	}
+	[class*='img-menu']:hover {
+		background-color: #D7DF23;
+		cursor: pointer;
 	}
 	.img-menu-pin,
 	.img-menu-envelope,
 	.img-menu-cell {
+		box-shadow: 0 0 4px #666;
 		width: 40px;
 	}
 	.img-menu-pin {
@@ -235,7 +240,6 @@
 
 	[class*="popup"] {
 		position: absolute;
-		border-radius: 40px;
 		margin-top: 40px;
 		width: auto;
 		font-size: 14px;
@@ -258,11 +262,11 @@
 	}
 	.img-title-cover {
 		background-image: url('/graphics/svg/title-cover.svg');
-		height: 63px;
+		height: 60px;
 	}
 	.img-title-cover-sub {
 		background-image: url('/graphics/svg/logo-ui.svg');
-		height: 56px;
+		height: 80px;
 		margin-top: 17px;
 	}
 
@@ -278,17 +282,27 @@
 		margin-bottom: 10px;
 	}
 	.img-social-pin {
-		background-image: url('/graphics/svg/cover-pin.svg');
 		width: 28px;
 	}
 	.img-social-envelope {
-		background-image: url('/graphics/svg/cover-envelope.svg');
 		width: 42px;
 	}
 	.img-social-cell {
-		background-image: url('/graphics/svg/cover-cell.svg');
 		width: 24px;
 	}
+
+	[class*='link-social'] .link-social-icon {
+		fill: #fff;
+	}
+	.link-social-pin:hover .link-social-icon,
+	.link-social-envelope:hover .link-social-icon,
+	.link-social-cell:hover .link-social-icon {
+		fill: #D7DF23;
+	}
+	[class*='link-social']:hover {
+		color: #D7DF23;
+	}
+
 	.footnote {
 		margin: 14px 20px 0 0;
 		display: table;
@@ -318,6 +332,9 @@
 		display: table;
 		width: 100%;
 	}
+	.txt-stretch-intro > div:last-child {
+		padding: 0 26px;
+	}
 
 	.img-me {
 		background-image: url('/graphics/svg/me.svg');
@@ -326,7 +343,6 @@
 	}
 
 /*   BADGES   */
-
 
 	.badge {
 		margin-bottom: 20px;
@@ -346,6 +362,11 @@
 		width: 25px;
 		margin: 2px 10px 0;
 	}
+	#me .img-badge {
+		height: 40px;
+		width: 40px;
+		margin: 0 20px 20px;
+	}
 
 	.badge-container > div:nth-child(1),
 	#responsive {
@@ -353,6 +374,10 @@
 		position: absolute;
 		width: 0;
 		height: 0;
+		overflow: hidden;
+	}
+	.badge-container > div:nth-child(3) {
+		padding-left: 8px;
 	}
 
 /*   CLIENTS   */
@@ -404,12 +429,14 @@
  		display: table;
 	}
 	.client:hover .client-name-spacer > div {
- 		color: #fff;
-		background-color: #58595B;
- 		box-shadow: 0 0 5px #ccc;
+ 		opacity: 0;
 	}
 
 /*   FUN   */
+
+	#fun {
+		padding: 20px;
+	}
 
 	.img-fun {
 		background-image: url('/graphics/svg/fun.svg');
@@ -453,7 +480,7 @@ and (min-width: 561px) {
 	}
 
 	[class*='txt-stretch'] {
-		padding: 80px;
+		padding: 54px;
 	}
 
 /*   COVER   */
@@ -463,7 +490,7 @@ and (min-width: 561px) {
 	}
 
 	.img-cover {
-		min-height: 600px;
+		min-height: 650px;
 	}
 	.img-cover > div:first-child {
 		padding: 170px 30px 10px;
@@ -515,6 +542,7 @@ and (min-width: 561px) {
 		visibility: visible;
 		position: relative;
 		height: auto;
+		overflow: visible;
 	}
 
 	.badge-notes {
@@ -548,6 +576,7 @@ and (min-width: 561px) {
 		visibility: visible;
 		text-align: center;
 		height: auto;
+		overflow: visible;
 	}
 	#responsive > div {
 		position: absolute;
