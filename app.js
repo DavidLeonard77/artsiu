@@ -104,7 +104,7 @@
 
 			$scope.getMargin = function (id) {
 
-				$scope.popupMargin = parseInt($('#popup-' + id).width()/2)-10;
+				$scope.popupMargin = parseInt($('#popup-' + id).width()/2)-6;
 			};
 		})
 		.directive('badges',function(){

@@ -115,6 +115,16 @@
 		opacity: 0;
 	}
 
+	.txt-stretch-intro > div:first-child,
+	.badge-container > div:nth-child(1),
+	#responsive {
+		visibility: hidden;
+		position: absolute;
+		width: 0;
+		height: 0;
+		overflow: hidden;
+	}
+
 	[class*='img-'] {
 		background-position: center;
 		background-size: contain;
@@ -368,14 +378,6 @@
 		margin: 0 20px 20px;
 	}
 
-	.badge-container > div:nth-child(1),
-	#responsive {
-		visibility: hidden;
-		position: absolute;
-		width: 0;
-		height: 0;
-		overflow: hidden;
-	}
 	.badge-container > div:nth-child(3) {
 		padding-left: 8px;
 	}
@@ -615,6 +617,16 @@ and (min-width : 800px) {
 
 	.footnote {
 		margin: 14px 40px 0 0;
+	}
+
+/*   ME   */
+
+	.txt-stretch-intro > div:first-child {
+		visibility: visible;
+		position: relative;
+		width: 100%;
+		height: auto;
+		overflow: hidden;
 	}
 
 }
