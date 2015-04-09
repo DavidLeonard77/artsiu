@@ -107,6 +107,7 @@
 				$scope.popupMargin = parseInt($('#popup-' + id).width()/2)-6;
 			};
 		})
+
 		.directive('badges',function(){
 			return {
 				restrict: 'E',
@@ -233,7 +234,7 @@
 							ww = $(window).width(),
 							wh = ww;
 
-						if (w > 561 && w <= 800) {
+						if (w >= 561 && w <= 800) {
 							w/=2;
 						} else if (w > 800 && w <= 1200) {
 							w/=2;
@@ -253,6 +254,7 @@
 				controllerAs: 'clientsCtrl'
 			}
 		})
+
 		.directive('postMenuDirective',function(){
 			return function(scope, element, attrs) {
 				if (scope.$last) setTimeout(function(){ scope.$emit('postMenuDirective', element, attrs) }, 1);
